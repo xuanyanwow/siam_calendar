@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>calendar</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/calendar.css">
+</head>
+<body>
+	<div class="calendar-wrap"></div>
+	<button class="button" style="background: #1a85ff;color: #fff;padding: 4px 12px;border-radius: 4px;display: none;margin: 40px auto;">
+		收起
+	</button>
+	<script type="text/javascript" src="js/zepto.min.js"></script>
+	<script type="text/javascript" src="js/widget.js"></script>
+	<script type="text/javascript" src="js/calendar.js"></script>
+	<script src="js/calendar-extend-slide.js"></script>
+	<script type="text/javascript">
+		var cal = new Calendar({
+			target:'.calendar-wrap',
+			className: 'cal',
+			tagDates: [],
+			todayText: '今天',
+			// year: 2018,
+			// month: 8,
+			onReady: function () {
+				$('.button').css('display','block');
+			},
+			onChangeMonthBefore: function (dateObj, type) {
+				
+			},
+			onSelect: function (dateObj, e) {
+				
+			},
+			onChangeMonth: function (dateObj) {
+				
+			}
+		});
+		
+		$('.button').on('click', function() {
+			var $this = $(this);
+			if (cal.isSlideUp()) {
+			    cal.slideDown();
+			} else {
+			    cal.slideUp();
+			}
+		});
+	</script>
+</body>
+</html>
